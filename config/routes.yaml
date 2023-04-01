@@ -1,0 +1,35 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+app_login:
+    path: /login
+    controller: App\Controller\AuthController::login
+    methods: ["POST"]
+app_recette_index:
+    path: /recette
+    controller: App\Controller\RecetteController::index
+    methods: GET
+
+app_recette_new:
+    path: /recette/new
+    controller: App\Controller\RecetteController::new
+    methods: GET|POST
+
+app_recette_show:
+    path: /recette/{id}
+    controller: App\Controller\RecetteController::show
+    methods: GET
+
+app_recette_edit:
+    path: /recette/{id}/edit
+    controller: App\Controller\RecetteController::edit
+    methods: GET|POST
+
+app_recette_delete:
+    path: "/recette/{id}"
+    controller: App\Controller\RecetteController::delete
+    methods: [DELETE]
